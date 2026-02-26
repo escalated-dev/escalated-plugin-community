@@ -1,0 +1,11 @@
+{
+    "name": "@escalated-dev/escalated-plugin-community",
+    "version": "0.1.0",
+    "description": "Community forums with topics, replies, upvotes, and moderation",
+    "main": "src/index.js",
+    "peerDependencies": {
+        "@escalated-dev/escalated": "^0.6.0",
+        "vue": "^3.4.0"
+    },
+    "keywords": ["escalated", "plugin", "community", "forums", "discussions", "upvotes", "moderation"]
+}

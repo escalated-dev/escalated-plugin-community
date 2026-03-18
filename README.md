@@ -1,30 +1,33 @@
-# Escalated Plugin: Community Forums
+# @escalated-dev/plugin-community
 
-Customer community forums that enable peer-to-peer support with discussion topics, replies, upvoting, best answers, and moderation tools to build a self-service knowledge ecosystem.
+Public community forums with categories, topics, replies, voting, moderation, and ticket-to-topic conversion.
 
-## Features (Planned)
-- Forum categories and topic management
-- Threaded replies with rich text
-- Upvoting/downvoting and best answer marking
-- Moderation tools (flag, lock, pin, move, delete)
-- User reputation and badge system
-- Full-text search across community content
-- Spam detection and auto-moderation
-- Convert tickets to topics and vice versa
-- Agent-verified responses
-- Email notifications for subscriptions
-- Community analytics dashboard
+## Features
 
-## Installation
+- Multi-category forum structure
+- Topic creation with optional pre-moderation
+- Threaded replies with solution marking
+- Voting on topics and replies
+- Ticket-to-topic conversion (adds "Convert to Community Topic" action)
+- Public forum page + admin management page
+- Real-time broadcast on new posts
 
-### Via ZIP Upload
-1. Download the latest release ZIP from this repository
-2. In Escalated admin, go to **Settings > Plugins**
-3. Click **Upload Plugin** and select the ZIP file
-4. Activate the plugin from the plugins list
+## Hooks
 
-### Requirements
-- Escalated >= 0.6.0
+| Type | Hook | Description |
+|------|------|-------------|
+| Action | `community.post.created` | Broadcasts new post to the community channel |
+| Filter | `ticket.actions` | Adds "Convert to Community Topic" action |
 
-## Status
-This plugin is in early development. See TODO.md for implementation status.
+## Endpoints
+
+| Method | Path | Capability |
+|--------|------|-----------|
+| GET/POST | `/categories` | public / `manage_settings` |
+| GET | `/topics` | public |
+| POST | `/topics` | authenticated |
+| GET | `/topics/:id` | public |
+| POST | `/topics/:id/replies` | authenticated |
+| POST | `/topics/:id/vote` | authenticated |
+| POST | `/topics/:id/convert-from-ticket` | `manage_tickets` |
+| GET/POST | `/settings` | `manage_settings` |

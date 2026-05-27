@@ -1,5 +1,7 @@
 # Escalated Plugin: Community
 
+**Website:** [escalated.dev](https://escalated.dev)
+
 Public community forums for Escalated with categories, topics, replies, voting, moderation, and ticket-to-topic conversion. Provides a customer-facing forum and an admin management interface.
 
 ## Features

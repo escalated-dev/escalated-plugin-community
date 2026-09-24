@@ -1,5 +1,7 @@
 # Escalated Plugin: Community
 
+[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-community.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-community/)
+
 **Website:** [escalated.dev](https://escalated.dev)
 
 Public community forums for Escalated with categories, topics, replies, voting, moderation, and ticket-to-topic conversion. Provides a customer-facing forum and an admin management interface.

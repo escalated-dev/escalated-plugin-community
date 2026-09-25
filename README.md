@@ -64,4 +64,4 @@ npm install @escalated-dev/plugin-community
 
 ## License
 
-MIT
+MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).

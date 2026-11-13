@@ -1,67 +1,65 @@
-# Escalated Plugin: Community
+<p align="center">
+  <a href="https://escalated.dev"><img src="https://raw.githubusercontent.com/escalated-dev/escalated/main/docs/assets/readme/logo.png" width="56" height="56" alt="Escalated"></a>
+</p>
 
-[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-community.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-community/)
+<h1 align="center">Community plugin for Escalated</h1>
 
-**Website:** [escalated.dev](https://escalated.dev)
+<p align="center">Public community forums, next to your helpdesk.</p>
 
-Public community forums for Escalated with categories, topics, replies, voting, moderation, and ticket-to-topic conversion. Provides a customer-facing forum and an admin management interface.
+<p align="center">
+  <a href="https://escalated.dev"><b>Website</b></a> ·
+  <a href="https://escalated.dev/docs"><b>Docs</b></a> ·
+  <a href="https://escalated.dev/cloud"><b>Cloud</b></a> ·
+  <a href="https://github.com/escalated-dev/escalated-plugin-community/releases"><b>Releases</b></a>
+</p>
+
+This plugin adds a customer-facing forum to Escalated, with categories, topics, replies, voting and moderation, plus an admin page to manage it. It's for teams that want customers to help each other, and to turn a good ticket into a public topic.
 
 ## Features
 
-- Multi-category forum structure with a default "General" category on first activation
-- Topic creation with optional pre-moderation (approve before publish)
+<table>
+<tr>
+<td width="33%" valign="top">
+
+**Forum**
+- Categories, with a default General category
+- Public forum page and admin page
+
+</td>
+<td width="33%" valign="top">
+
+**Topics and replies**
+- Topics with optional pre-moderation
 - Threaded replies with solution marking
 - Voting on topics
-- Ticket-to-topic conversion via ticket action menu
-- Public forum page and admin management page
-- Real-time broadcast notifications on new posts
 
-## Configuration
+</td>
+<td width="33%" valign="top">
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `title` | text | No | Community forum title. Defaults to `Community Forum`. |
-| `allow_anonymous_viewing` | boolean | No | Allow unauthenticated users to view topics. Defaults to `true`. |
-| `require_auth_to_post` | boolean | No | Require authentication to create topics and replies. Defaults to `true`. |
-| `moderation_mode` | select | No | `post_first` (moderate later) or `pre_moderated` (approve before publish). Defaults to `post_first`. |
-| `enable_voting` | boolean | No | Enable voting on topics. Defaults to `true`. |
+**Tickets and notifications**
+- Convert a ticket into a topic
+- Real-time notifications on new posts
 
-## Admin Pages
+</td>
+</tr>
+</table>
 
-- **community** — Public-facing community forum browser.
-- **admin/community** — Admin interface for managing categories, topics, and moderation.
+<p align="center"><sub><a href="docs/features.md">Every feature in detail</a></sub></p>
 
-## Hooks
+<p align="center">
+  <a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js"></a>
+  <a href="https://vuejs.org"><img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js"></a>
+</p>
 
-### Actions
-- `community.post.created` — Broadcasts new post notifications to the community channel.
+## Learn more
 
-### Filters
-- `ticket.actions` — Adds a "Convert to Community Topic" action to the ticket action menu.
-
-## Endpoints
-
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | `/categories` | List all forum categories. |
-| POST | `/categories` | Create a new category. |
-| PUT | `/categories/:id` | Update a category. |
-| DELETE | `/categories/:id` | Delete a category. |
-| GET | `/topics` | List topics, optionally filtered by category_id. |
-| POST | `/topics` | Create a new topic. |
-| GET | `/topics/:id` | Get a topic with its replies. |
-| POST | `/topics/:id/replies` | Add a reply to a topic. |
-| POST | `/topics/:id/vote` | Upvote a topic. |
-| POST | `/topics/:id/convert-from-ticket` | Convert a ticket into a community topic. |
-| GET | `/settings` | Get plugin configuration. |
-| POST | `/settings` | Save plugin configuration. |
-
-## Installation
-
-```bash
-npm install @escalated-dev/plugin-community
-```
+- [Every feature](docs/features.md)
+- [Configuration, hooks and endpoints](docs/reference.md)
+- [Plugin SDK](https://github.com/escalated-dev/escalated-plugin-sdk): how Escalated plugins are built
+- [Escalated docs](https://escalated.dev/docs)
+- [Escalated](https://github.com/escalated-dev/escalated), the main repo
 
 ## License
 
-MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
+MIT. Copyright (c) 2026 Escalated.dev. See [LICENSE](LICENSE).
